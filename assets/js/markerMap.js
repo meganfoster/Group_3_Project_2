@@ -19,21 +19,21 @@ var sleepData = "assets/data/500_Cities__Sleeping_less_than_7_hours_among_adults
   
 d3.csv(sleepData,(function(response) {
 
-  // console.log(response);
-
   var heatArray = [];
 
   for (var i = 0; i < response.length; i++) {
     var coordinates = response[i].GeoLocation;
     var cleanCoordinates = coordinates.replace("(","").replace(")","")
 
-    var latlng = cleanCoordinates.split(",")
+    var latlng = cleanCoordinates.split(", ")
+    
+    var newLatLng = latlng.map(Number)
 
     if (coordinates) {
-      heatArray.push([latlng]);
+      heatArray.push([newLatLng]);
     }
   }
-  console.log(heatArray);
+  //console.log(heatArray);
 
   for (var i = 0; i < heatArray.length; i++) {
 
@@ -54,21 +54,14 @@ d3.csv(sleepData,(function(response) {
         color = "blue";
     }
 
-
-L.circle([heatArray[0],heatArray[1]], {
+L.circle(
+  L.latLng(heatArray[i][0],heatArray[i][1]), {
     fillOpacity: 0.75,
     color: "white",
     fillColor: color,
     radius: 20
-}).bindPopup("<h1>" + sleepData.CityName + "</h1>").addTo(myMap);
+}).bindPopup("<h1>" + response.CityName + "</h1>").addTo(myMap);
 }
 
 }));
-
-
-
-
-
-
-
 
