@@ -33,35 +33,53 @@ d3.csv(sleepData,(function(response) {
       heatArray.push([newLatLng]);
     }
   }
-  //console.log(heatArray);
 
   for (var i = 0; i < heatArray.length; i++) {
 
     var color = "";
-    if (response[i].Data_Value > 38.1){
-        color = "red";
+    if (response[i].Data_Value > 38){
+      color = "#035606";
     }
-    else if (response[i].Data_Value > 35.8){
-        color = "orange";
+    else if (response[i].Data_Value > 35){
+      color = "#06a40b";
     }
-    else if (response[i].Data_Value > 33.6){
-        color = "yellow";
+    else if (response[i].Data_Value > 33){
+      color = "#09f311";
     }
-    else if (response[i].Data_Value > 30.8){
-        color = "green";
+    else if (response[i].Data_Value > 30){
+      color = "#56f85b";
     }
     else {
-        color = "blue";
+      color = "#a4fba7";
     }
 
 L.circle(
   L.latLng(heatArray[i][0],heatArray[i][1]), {
-    fillOpacity: 0.75,
-    color: "white",
-    fillColor: color,
-    radius: 20
-}).bindPopup("<h1>" + response.CityName + "</h1>").addTo(myMap);
+    fillOpacity: 0.5,
+    color: color,
+    stroke: false,
+    radius: response[i].Data_Value * 1200
+}).bindPopup("<h4>" + response[i].CityName + ", " + response[i].StateAbbr + "</h4><hr><h5>Sleep Deprivation Rate: " + response[i].Data_Value + "%</h5>").addTo(myMap);
 }
 
-}));
 
+//adding a legend to the map and using a for loop to write out the HTML code
+var legend = L.control({
+  position: 'bottomright'
+});
+
+legend.onAdd = function() {
+  var div = L.DomUtil.create('div', 'legend');
+  
+      colors = ["#a4fba7","#56f85b","#09f311","#06a40b","#035606"];
+      labels = ["< 30%", "30% - 33%", "33% - 35%", "35% - 38%", "> 38%"];
+
+  for (var i = 0; i <colors.length; i++) {
+      div.innerHTML += '<li style="padding: 4px; background-color:' + colors[i] + '">' + labels[i] + '</li>';
+      }
+
+  return div;
+};
+
+legend.addTo(myMap);
+}));
