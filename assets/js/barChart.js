@@ -68,12 +68,17 @@ d3.csv(sleepData, function(data) {
     var obesity = all_states.OBESITY
     bar_values.push(obesity)
 
+    var barColors = ["#e28b6b","#eeab79","#f7cb8e","#eeab79","#e28b6b","#d26b63","#be4c60","#a42e61","#851362","#5e0063"];
+    
     // Trace1 for the Data
     var trace1 = {
         x: bar_values,
         y: barids,
         type: "bar",
-        orientation: "h"
+        orientation: "h",
+        marker: {
+            color: barColors.reverse()
+        }
     };
 
     // data
@@ -81,7 +86,11 @@ d3.csv(sleepData, function(data) {
 
     // Apply the group bar mode to the layout
     var layout = {
-
+        xaxis: {
+            title: {
+                text: "Percentage of Population"
+            }
+        },
         margin: {
             l: 100,
             r: 100,
@@ -142,12 +151,17 @@ d3.csv(sleepData, function(data) {
         var obesity = state.OBESITY
         bar_values.push(obesity)
 
+        var barColors = ["#e28b6b","#eeab79","#f7cb8e","#eeab79","#e28b6b","#d26b63","#be4c60","#a42e61","#851362","#5e0063"];
+
         // Trace1 for the Data
         var trace1 = {
             x: bar_values,
             y: barids,
             type: "bar",
-            orientation: "h"
+            orientation: "h",
+            marker: {
+                color: barColors.reverse()
+            }
         };
 
         // data
