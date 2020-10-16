@@ -35,7 +35,7 @@ function makeResponsive() {
 
 
   //Import data
-  d3.csv("state_data2.csv").then(function(medianIncome) {
+  d3.csv("assets/data/state_data2.csv").then(function(medianIncome) {
 
     medianIncome.forEach(function(data) {
       data.median_income = +data.median_income;
@@ -61,10 +61,16 @@ function makeResponsive() {
     // ==============================
     chartGroup.append("g")
       .attr("transform", `translate(0, ${height})`)
-      .call(bottomAxis);
+      .call(bottomAxis)
+      .attr("stroke","#f7cb8e")
+      .attr("fill","#f7cb8e")
+      .attr("font-size", "15");
 
     chartGroup.append("g")
-      .call(leftAxis);
+      .call(leftAxis)
+      .attr("stroke", "#f7cb8e")
+      .attr("fill", "#f7cb8e")
+      .attr("font-size", "15");
 
     // Step 5: Create Circles
     // ==============================
@@ -75,17 +81,19 @@ function makeResponsive() {
       .attr("cx", d => xLinearScale(d.median_income))
       .attr("cy", d => yLinearScale(d.sleep_less_than_7hours))
       .attr("r", "15")
-      .attr("fill", "gold")
-      .attr("opacity", ".5")
+      .attr("fill", "#f7cb8e")
+      .attr("opacity", ".75")
       .attr("stroke", "black");
 
     // Step 6: Initialize tool tip
     // ==============================
     var toolTip = d3.tip()
       .attr("class", "tooltip")
+      .style("background","#5e0063")
+      .style("color","#f7cb8e")
       .offset([80, -60])
       .html(function(d) {
-        return (`${d.state}<br>Median Income: ${d.median_income}<br>Sleep less than 7 hours: ${d.sleep_less_than_7hours}`);
+        return (`<strong>${d.state}</strong><br>Median Income: $${d.median_income}<br>Sleep Deprivation Rate: ${d.sleep_less_than_7hours}%`);
         });
 
     // Step 7: Create tooltip in the chart
@@ -105,16 +113,18 @@ function makeResponsive() {
     // Create axes labels
     chartGroup.append("text")
       .attr("transform", "rotate(-90)")
-      .attr("y", 0 - margin.left + 40)
-      .attr("x", 0 - (height / 2))
+      .attr("y", 0 - margin.left + 20)
+      .attr("x", 0 - (height / 1.5))
       .attr("dy", "1em")
       .attr("class", "axisText")
+      .attr("stroke","#f7cb8e")
       .text("Sleep Deprivation Rate (%)");
 
     
     chartGroup.append("text")
-      .attr("transform", `translate(${width / 2}, ${height + margin.top + 30})`)
+      .attr("transform", `translate(${width / 2.5}, ${height + margin.top + 35})`)
       .attr("class", "axisText")
+      .attr("stroke", "#f7cb8e")
       .text("State Median Income");
   }).catch(function(error) {
     console.log(error);
