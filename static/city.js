@@ -17,3 +17,6 @@ Table(state)
 })
 
 
+// $(document).ready( function () {
+//     $('#stateTable').DataTable();
+// } );

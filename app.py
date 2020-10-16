@@ -39,19 +39,19 @@ def cities_data():
     data=[]
     for row in results:
         dictionary = {}
-        dictionary["StateCode"]=row[0]
-        dictionary["State"]=row[1]
-        dictionary["MedianIncome"]=row[2]
-        dictionary["Population2010"]=row[3]
-        dictionary["Arthritis"]=row[4]
-        dictionary["HighBloodPreasure"]=row[5]
-        dictionary["Cancer"]=row[6]
-        dictionary["Smoking"]=row[7]
-        dictionary["Diabetes"]=row[8]
-        dictionary["HighCholesterol"]=row[9]
-        dictionary["KidneyDisease"]=row[10]
         dictionary["Obesity"]=row[11]
-       
+        dictionary["KidneyDisease"]=row[10]
+        dictionary["HighCholesterol"]=row[9]
+        dictionary["Diabetes"]=row[8]
+        dictionary["Smoking"]=row[7]
+        dictionary["Cancer"]=row[6]
+        dictionary["HighBloodPreasure"]=row[5]
+        dictionary["Arthritis"]=row[4]
+        dictionary["Population2010"]=row[3]
+        dictionary["MedianIncome"]=row[2]
+        dictionary["State"]=row[1]
+        dictionary["StateCode"]=row[0]
+
         data.append(dictionary)
      
     return jsonify(data)
