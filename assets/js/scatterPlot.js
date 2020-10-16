@@ -35,7 +35,7 @@ function makeResponsive() {
 
 
   //Import data
-  d3.csv("assets/data/state_data2.csv").then(function(medianIncome) {
+  d3.csv("../assets/data/state_data2.csv").then(function(medianIncome) {
 
     medianIncome.forEach(function(data) {
       data.median_income = +data.median_income;

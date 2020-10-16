@@ -1,4 +1,3 @@
-
 //creat map object
 var myMap = L.map("map", {
     center: [44.4925, -99.9018],
@@ -16,7 +15,7 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 
 
 //load in the data
-var sleepData = "assets/data/500_Cities__Sleeping_less_than_7_hours_among_adults_aged___18_years.csv";
+var sleepData = "../assets/data/500_Cities__Sleeping_less_than_7_hours_among_adults_aged___18_years.csv";
   
 d3.csv(sleepData,(function(response) {
 

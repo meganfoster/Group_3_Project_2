@@ -35,6 +35,31 @@ h5 {
   width: 10px;
 }
 
+#navbar-bg {
+  background-color: #f7cb8e;
+}
+
+#navbar-link {
+  padding: 10px;
+  font-family: 'Times New Roman', Times, serif;
+  background: #f7cb8e;
+  color: #5e0063;
+  text-decoration: none;
+}
+
+#navbarDropdownMenuLink {
+  color: #5e0063;
+}
+
+.dropdown-menu {
+  background: #5e0063;
+}
+
+.dropdown-item {
+  background: #5e0063;
+  color: #f7cb8e;
+}
+
 /* .tooltip {
   position: absolute;
   width: 135px;
