@@ -66,14 +66,8 @@ d3.csv("data/state_data.csv").then((data) => {
     bar_values.push(obesity)
 
     // Display sleep rate percent
-    d3.select(".panel-body")
-            .selectAll("div")
-            .data(sleep)
-            // console.log(sleep)
-            .enter()
-            .append("div")
-            .text(sleep);
-            console.log(sleep)
+    var panel = d3.select("#sample-metadata")
+    panel.append("p").text(sleep)
 
     // Trace1 for the Data
     var trace1 = {
@@ -177,6 +171,15 @@ d3.csv("data/state_data.csv").then((data) => {
         state_bar_values.push(state_kidney)
         var state_obesity = state.OBESITY
         state_bar_values.push(state_obesity)
+
+        // Display Sleep Percent for State
+        d3.select("#sample-metadata")
+            .selectAll("p")
+            .data(sleep)
+            .exit()
+            .remove();
+        var panel = d3.select("#sample-metadata")
+        panel.append("p").text(state_sleep)
 
         console.log(state_bar_values)
 
