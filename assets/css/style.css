@@ -16,6 +16,10 @@ h1 {
   text-align: center;
 }
 
+h5 {
+  font-weight: bold;
+}
+
 .legend {
   line-height: 19px;
   list-style-type: none;
@@ -25,4 +29,8 @@ h1 {
   color:black;
   background: #fff;
   border-radius: 5px;
+}
+
+.selDataset {
+  width: 10px;
 }

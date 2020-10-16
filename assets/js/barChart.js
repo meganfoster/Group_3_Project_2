@@ -96,7 +96,8 @@ d3.csv(sleepData, function(data) {
             r: 100,
             t: 100,
             b: 100
-        }
+        },
+        title: "Sleep Deprivation & Negative Health Factors"
     };
 
     // Render the plot to the div tag with id "bar"
@@ -169,13 +170,18 @@ d3.csv(sleepData, function(data) {
 
         // Apply the group bar mode to the layout
         var layout = {
-
+            xaxis: {
+                title: {
+                    text: "Percentage of Population"
+                }
+            },
             margin: {
                 l: 100,
                 r: 100,
                 t: 100,
                 b: 100
-            }
+            },
+            title: "Sleep Deprivation & Negative Health Factors"
         };
 
         // Render the plot to the div tag with id "plot"
