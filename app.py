@@ -39,16 +39,16 @@ def cities_data():
     data=[]
     for row in results:
         dictionary = {}
-        dictionary["Obesity"]=row[11]
-        dictionary["KidneyDisease"]=row[10]
-        dictionary["HighCholesterol"]=row[9]
-        dictionary["Diabetes"]=row[8]
-        dictionary["Smoking"]=row[7]
-        dictionary["Cancer"]=row[6]
-        dictionary["HighBloodPreasure"]=row[5]
-        dictionary["Arthritis"]=row[4]
+        dictionary["Obesity"]=round(row[11],2)
+        dictionary["KidneyDisease"]=round(row[10],2)
+        dictionary["HighCholesterol"]=round(row[9],2)
+        dictionary["Diabetes"]=round(row[8],2)
+        dictionary["Smoking"]=round(row[7],2)
+        dictionary["Cancer"]=round(row[6],2)
+        dictionary["HighBloodPressure"]=round(row[5],2)
+        dictionary["Arthritis"]=round(row[4],2)
         dictionary["Population2010"]=row[3]
-        dictionary["MedianIncome"]=row[2]
+        dictionary["MedianIncome"]=round(row[2],2)
         dictionary["State"]=row[1]
         dictionary["StateCode"]=row[0]
 
