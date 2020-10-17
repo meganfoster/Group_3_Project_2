@@ -179,6 +179,7 @@ d3.csv("../assets/data/state_data.csv", function(data) {
         state_bar_values.push(state_kidney)
         var state_obesity = state.OBESITY
         state_bar_values.push(state_obesity)
+        console.log(state_bar_values)
 
         var barColors = ["#e28b6b","#eeab79","#f7cb8e","#eeab79","#e28b6b","#d26b63","#be4c60","#a42e61","#851362","#5e0063"];
 
@@ -189,7 +190,7 @@ d3.csv("../assets/data/state_data.csv", function(data) {
             .exit()
             .remove();
         var panel = d3.select("#sample-metadata")
-        panel.append("p").text(`${dataset} Rate: ${sleep}%`)
+        panel.append("p").text(`${dataset} Rate: ${state_sleep}%`)
 
         // console.log(state_bar_values)
 
@@ -226,7 +227,9 @@ d3.csv("../assets/data/state_data.csv", function(data) {
         // Render the plot to the div tag with id "plot"
         Plotly.newPlot("bar", bar_data, layout);
 
-        var chart_options = {
+        console.log(state_bar_values)
+
+        var new_chart_options = {
             series: [{
               name: "All States %",
               data: bar_values
@@ -270,7 +273,7 @@ d3.csv("../assets/data/state_data.csv", function(data) {
           }
           };
   
-          var chart = new ApexCharts(document.querySelector("#bubble"), chart_options);
+          var chart = new ApexCharts(document.querySelector("#bubble"), new_chart_options);
           chart.render();
     };
 });
