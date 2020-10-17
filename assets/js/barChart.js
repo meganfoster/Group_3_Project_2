@@ -1,7 +1,6 @@
-d3.csv("../assets/data/state_data.csv", function(data) {
+d3.csv("../assets/data/state_data2.csv", function(data) {
 
     data.forEach(function (d) {
-        d.Population2010 = +d.Population2010;
         d.ARTHRITIS = +d.ARTHRITIS;
         d.BPHIGH = +d.BPHIGH;
         d.CANCER = +d.CANCER;
@@ -11,16 +10,16 @@ d3.csv("../assets/data/state_data.csv", function(data) {
         d.HIGHCHOL = +d.HIGHCHOL;
         d.KIDNEY_DISEASE = +d.KIDNEY_DISEASE;
         d.OBESITY = +d.OBESITY;
-        d.SLEEP_LESS_THAN_7HOURS = +d.SLEEP_LESS_THAN_7HOURS;
+        d.sleep_less_than_7hours = +d.sleep_less_than_7hours;
     });
-    // console.log(data[0]);
+    console.log(data[0]);
 
     // Create Dropdown Options   
     var select = document.getElementById("selDataset");
     var options = []
 
     data.map(function (d) {
-        options.push(d.State);
+        options.push(d.state);
     });
     // console.log(options)
 
@@ -44,7 +43,7 @@ d3.csv("../assets/data/state_data.csv", function(data) {
     var barids = ["< 7 HOURS SLEEP", "ARTHRITIS", "HIGH BP", "CANCER", "ASTHMA", "SMOKING", "DIABETES", "HIGH CHOL", "KIDNEY DIS.", "OBESITY"]
     var bar_values = []
 
-    var sleep = all_states.SLEEP_LESS_THAN_7HOURS
+    var sleep = all_states.sleep_less_than_7hours
     bar_values.push(sleep)
     var arthritis = all_states.ARTHRITIS
     bar_values.push(arthritis)
@@ -58,7 +57,7 @@ d3.csv("../assets/data/state_data.csv", function(data) {
     bar_values.push(smoking)
     var diabetes = all_states.DIABETES
     bar_values.push(diabetes)
-    var high_chol = all_states.HIGHCHOL
+    var high_chol = all_states.HIGH_CHOL
     bar_values.push(high_chol)
     var kidney = all_states.KIDNEY_DISEASE
     bar_values.push(kidney)
@@ -180,7 +179,7 @@ d3.csv("../assets/data/state_data.csv", function(data) {
         var barids = ["< 7 HOURS SLEEP", "ARTHRITIS", "HIGH BP", "CANCER", "ASTHMA", "SMOKING", "DIABETES", "HIGH CHOL", "KIDNEY DIS.", "OBESITY"]
         var state_bar_values = []
 
-        var state_sleep = state.SLEEP_LESS_THAN_7HOURS
+        var state_sleep = state.sleep_less_than_7hours
         state_bar_values.push(state_sleep)
         var state_arthritis = state.ARTHRITIS
         state_bar_values.push(state_arthritis)
@@ -194,7 +193,7 @@ d3.csv("../assets/data/state_data.csv", function(data) {
         state_bar_values.push(state_smoking)
         var state_diabetes = state.DIABETES
         state_bar_values.push(state_diabetes)
-        var state_high_chol = state.HIGHCHOL
+        var state_high_chol = state.HIGH_CHOL
         state_bar_values.push(state_high_chol)
         var state_kidney = state.KIDNEY_DISEASE
         state_bar_values.push(state_kidney)
