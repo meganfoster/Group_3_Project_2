@@ -103,30 +103,51 @@ d3.csv("../assets/data/state_data.csv", function(data) {
 
     // Render the plot to the div tag with id "bar"
     Plotly.newPlot("bar", bar_data, layout);
-
+    
     var chart_options = {
-        chart: {
-          type: 'line',
-          stroke: {
-              curve: "smooth",
+      series: [{
+            name: "All States %",
+            data: bar_values
           },
-          markers: {
-              size:1,
+          {
+            name: "Selected State %",
+            data: bar_values
+          }
+        ],
+          chart: {
+          height: 350,
+          type: 'line',
+          zoom: {
+            enabled: false
+          },
+        },
+        dataLabels: {
+          enabled: false
+        },
+        colors: ["#e28b6b", "#5e0063"],
+        stroke: {
+          width: [7, 5],
+          curve: 'smooth',
+          dashArray: [0, 5]
+        },
+        title: {
+          text: 'All States Sleep and Health Factors by Population Percentage vs. Selected State',
+          align: 'left'
+        },
+        markers: {
+          size: 0,
+          hover: {
+            sizeOffset: 6
           }
         },
-        series: [{
-          name: 'Percent',
-          data: bar_values
-        }],
         xaxis: {
           categories: barids
         },
-        title: {
-            text: 'All States Sleep and Health Factors by Population Percentage',
-            align: 'left'
-          },
-      }
-      
+        grid: {
+          borderColor: '#f1f1f1',
+        }
+        };
+
       var chart = new ApexCharts(document.querySelector("#bubble"), chart_options);
       
       chart.render();
@@ -229,52 +250,16 @@ d3.csv("../assets/data/state_data.csv", function(data) {
 
         console.log(state_bar_values)
 
-        var new_chart_options = {
-            series: [{
-              name: "All States %",
-              data: bar_values
-            },
-            {
-              name: "Selected State %",
-              data: state_bar_values
-            }
-          ],
-            chart: {
-            height: 350,
-            type: 'line',
-            zoom: {
-              enabled: false
-            },
-          },
-          dataLabels: {
-            enabled: false
-          },
-          colors: ["#e28b6b", "#5e0063"],
-          stroke: {
-            width: [7, 5],
-            curve: 'smooth',
-            dashArray: [0, 5]
-          },
-          title: {
-            text: 'All States Sleep and Health Factors by Population Percentage vs. Selected State',
-            align: 'left'
-          },
-          markers: {
-            size: 0,
-            hover: {
-              sizeOffset: 6
-            }
-          },
-          xaxis: {
-            categories: barids
-          },
-          grid: {
-            borderColor: '#f1f1f1',
-          }
-          };
-  
-          var chart = new ApexCharts(document.querySelector("#bubble"), new_chart_options);
-          chart.render();
+        chart.updateSeries([{
+          name: "All States %",
+          data: bar_values
+        },
+        {
+          name: "Selected State %",
+          data: state_bar_values
+        }
+      ])
+
     };
 });
 
