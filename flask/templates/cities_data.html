@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sleep Study - Data</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!--D3 JavaScript-->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+
+</head>
+
+<body style="background: url(https://wallpapercave.com/wp/wp2706096.jpg); background-size: 100% 100%;">
+
+  <div class = "container-fluid">
+
+    <div class="row">
+      <div class="col-lg-12 jumbotron jumbotron-fluid text-center" style="background-color: #5e0063; color: #f7cb8e; margin-bottom: 0%;">
+        <h1 class = "display-1">Sleep Data</h1>
+        <h4>The table below shows all the data associated with Sleep.</h4>
+        <h4>-Scroll through the data below-</h4>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light p-0" id="navbar-bg">
+      <a class="navbar-brand" id="navbar-link" href="../index.html"><strong>Homepage</strong></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav navbar-right">
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><strong>Sleepy Charts</strong></a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="map.html">Sleep Map</a>
+              <a class="dropdown-item" href="bar-line.html">Health Factors</a>
+              <a class="dropdown-item" href="scatter.html">Median Income</a>
+              <a class="dropdown-item" href="cities_data.html">Sleep Data</a>
+          </div> 
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="row">
+        <div class="col-md-9 mx-auto" style="background-color: #5e0063; color: #f7cb8e;">
+            <table id="stateTable"class="table-sm">
+                <thead>
+                    <tr><th>Arthritis</th><th>Cancer</th><th>Diabetes</th><th>HighBloodPress.</th><th>HighChol.</th><th>KidneyDisease</th><th>MedianIncome</th><th>Obesity</th><th>Population2010</th><th>Smoking</th><th>State</th><th>StateCode</th></tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+  </div>
+
+  <footer style="text-align: center; padding-top: 5px; padding-bottom: 5px; margin-top: 50px; font-weight: 600; font-size: medium; background-color:#5e0063; color: #f7cb8e;" class="footer">
+    <span class="bottom"> Sleep Study - Group 3 - Data Visualization - UC Irvine - 2020 &copy</span>
+  </footer>
+
+   
+  <!--Flask app-->
+   <script src="{{url_for('static', filename='city.js')}}"></script>
+
+</body>
+
+</html>

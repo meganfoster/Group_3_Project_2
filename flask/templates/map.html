@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Sleep Experiment - Map</title>
+
+  <!-- Style Sheets -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="../assets/css/style.css">  
+
+  <!--D3 JavaScript-->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.3/d3.min.js"></script>
+
+  <!-- JQuery JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin="" />
+
+  <!--Leaflet-->
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
+
+</head>
+
+<body style="background: url(https://wallpapercave.com/wp/wp2706096.jpg); background-size: 100% 100%;">
+  
+  <div class="row">
+    <div class="col-lg-12 jumbotron jumbotron-fluid text-center" style="background-color: #5e0063; color: #f7cb8e; margin-bottom: 0%;">
+      <h1 class="display-1">Sleep Map</h1>
+      <h4>This map displays the rates of sleep deprivation in the major cities of each state across the United States.</h4>
+      <h4>-Click each point to see the actual statistics-</h4>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-light p-0" id="navbar-bg">
+    <a class="navbar-brand" id="navbar-link" href="../index.html"><strong>Homepage</strong></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">       
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <strong>Sleepy Charts</strong>
+          </a>        
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="map.html">Sleep Map</a>
+              <a class="dropdown-item" href="bar-line.html">Health Factors</a>
+              <a class="dropdown-item" href="scatter.html">Median Income</a>
+              <a class="dropdown-item" href="cities_data.html">Sleep Data</a>
+          </div>          
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class = "row">
+    <div class= "col-lg-9 mx-auto">
+      <div id="map" style="width: 100%;height: 720px; margin-top: 50px; border-color: #5e0063; border-style: solid; border-width: thick;"></div>
+    </div>
+  </div>
+          
+  <footer class="footer" style="text-align: center; padding-top: 5px; padding-bottom: 5px; margin-top: 50px; font-weight: 600; font-size: medium; background-color:#5e0063; color: #f7cb8e;">
+    <span class="bottom"> Sleep Study - Group 3 - Data Visualization - UC Irvine - 2020 &copy</span>
+  </footer>
+
+  <!-- API key -->
+  <script type="text/javascript" src="../assets/js/config.js"></script>
+
+  <!-- Our JavaScript -->
+  <script type="text/javascript" src="../assets/js/markerMap.js"></script>
+
+  <!-- Leaflet heatmap plugin-->
+  <script type="text/javascript" src="../assets/js/leaflet-heat.js"></script>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+
+
