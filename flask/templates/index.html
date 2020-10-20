@@ -10,7 +10,7 @@
 
   <!-- Style Sheets -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
   <!-- JQuery JavaScript -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -38,10 +38,10 @@
           <strong>Sleepy Charts</strong>
           </a>        
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="templates/map.html">Sleep Map</a>
-              <a class="dropdown-item" href="templates/bar-line.html">Health Factors</a>
-              <a class="dropdown-item" href="templates/scatter.html">Median Income</a>
-              <a class="dropdown-item" href="templates/cities_data.html">Sleep Data</a>
+              <a class="dropdown-item" href="map.html">Sleep Map</a>
+              <a class="dropdown-item" href="bar-line.html">Health Factors</a>
+              <a class="dropdown-item" href="scatter.html">Median Income</a>
+              <a class="dropdown-item" href="cities_data.html">Sleep Data</a>
           </div>          
         </li>
       </ul>
@@ -68,7 +68,7 @@
           </p>
           <p> Our data was pulled directly from the CDC website. There were 5 different datasets that were used. 
           </p>
-          <img src="assets/data/zzzz.jpg" style="align-items: center; width: 20%; height: 20%;"/>
+          <img src="{{ url_for('static', filename='zzzz.jpg') }}" alt="" style="align-items: center; width: 20%; height: 20%;">
         </div>        
       </div>
     </div>
@@ -79,7 +79,7 @@
   </footer>
 
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-
+   
 </body>
 
 </html>

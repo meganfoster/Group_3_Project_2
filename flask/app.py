@@ -28,13 +28,28 @@ def create_connection(db_file):
             conn.close()
 
 app = Flask(__name__)
-@app.route("/")
+@app.route("/index.html")
 def index():
+    return render_template("index.html")
+
+@app.route("/cities_data.html")
+def cities_data():
     return render_template("cities_data.html")
 
+@app.route("/scatter.html")
+def scatter():
+    return render_template("scatter.html")
 
-@app.route("/cities_data")
-def cities_data():
+@app.route("/bar-line.html")
+def bar_line():
+    return render_template("bar-line.html")
+
+@app.route("/map.html")
+def map():
+    return render_template("map.html")
+
+@app.route("/city_data")
+def city_data():
     results = create_connection(r"cities_data.sqlite")
     data=[]
     for row in results:

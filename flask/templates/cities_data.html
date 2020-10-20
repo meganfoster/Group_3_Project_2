@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Sleep Study - Data</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <!--D3 JavaScript-->
   <script src="https://d3js.org/d3.v5.min.js"></script>
@@ -34,7 +34,7 @@
     </div>
 
     <nav class="navbar navbar-expand-lg navbar-light p-0" id="navbar-bg">
-      <a class="navbar-brand" id="navbar-link" href="../index.html"><strong>Homepage</strong></a>
+      <a class="navbar-brand" id="navbar-link" href="index.html"><strong>Homepage</strong></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

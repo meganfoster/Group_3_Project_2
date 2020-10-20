@@ -10,7 +10,7 @@
 
   <!-- Style Sheets -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
   <!-- D3 JavaScript -->
@@ -34,7 +34,7 @@
   </div>
 
   <nav class="navbar navbar-expand navbar-light p-0" id="navbar-bg">
-    <a class="navbar-brand" id="navbar-link" href="../index.html"><strong>Homepage</strong></a>
+    <a class="navbar-brand" id="navbar-link" href="index.html"><strong>Homepage</strong></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -87,7 +87,7 @@
   </footer>
 
   <!-- Our JavaScript -->
-  <script type="text/javascript" src="../assets/js/barChart.js"></script>
+  <script type="text/javascript" src="../static/barChart.js"></script>
 
   <!-- JQuery JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>

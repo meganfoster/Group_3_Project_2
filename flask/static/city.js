@@ -1,4 +1,4 @@
-d3.json("/cities_data").then(function(state){
+d3.json("/city_data").then(function(state){
     // console.log(state)
     
     var tbody=d3.select('tbody')
@@ -17,6 +17,3 @@ Table(state)
 })
 
 
-// $(document).ready( function () {
-//     $('#stateTable').DataTable();
-// } );
