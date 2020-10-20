@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify, render_template, make_response
 import sqlite3
 from sqlite3 import Error
 
@@ -28,23 +28,25 @@ def create_connection(db_file):
             conn.close()
 
 app = Flask(__name__)
-@app.route("/index.html")
-def index():
+@app.route("/")
+
+@app.route("/index")
+def home():
     return render_template("index.html")
 
-@app.route("/cities_data.html")
+@app.route("/cities_data")
 def cities_data():
     return render_template("cities_data.html")
 
-@app.route("/scatter.html")
+@app.route("/scatter")
 def scatter():
     return render_template("scatter.html")
 
-@app.route("/bar-line.html")
+@app.route("/bar-line")
 def bar_line():
     return render_template("bar-line.html")
 
-@app.route("/map.html")
+@app.route("/map")
 def map():
     return render_template("map.html")
 

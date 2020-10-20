@@ -1,5 +1,5 @@
 d3.json("/city_data").then(function(state){
-    // console.log(state)
+    console.log(state)
     
     var tbody=d3.select('tbody')
     function Table(states) {
