@@ -1,5 +1,23 @@
-d3.csv("../assets/data/state_data2.csv", function(data) {
+d3.json("/city_data").then(function(error,state){
+  console.log(state)
+  if (error) throw error;
+  var tbody=d3.select('tbody')
+  function Table(states) {
+      console.log(states)
+      tbody.html("")
+      states.forEach((stateData) => {
+      var row = tbody.append("tr");
+      Object.values(stateData).forEach((value) => {
+        var cell = row.append("td");
+        cell.text(value);
+      });
+    });
+  }
+Table(state)   
+});
 
+d3.csv("../assets/state_data2.csv", function(data) {
+    console.log(data)
     data.forEach(function (d) {
         d.ARTHRITIS = +d.ARTHRITIS;
         d.BPHIGH = +d.BPHIGH;

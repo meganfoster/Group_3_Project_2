@@ -4,7 +4,7 @@ from sqlite3 import Error
 
 def select_all(conn):
     """
-    Query all rows in the tasks table
+    Query all rows in the table
     :param conn: the Connection object
     :return:
     """
@@ -56,23 +56,26 @@ def city_data():
     data=[]
     for row in results:
         dictionary = {}
-        dictionary["Obesity"]=round(row[11],2)
-        dictionary["KidneyDisease"]=round(row[10],2)
-        dictionary["HighCholesterol"]=round(row[9],2)
-        dictionary["Diabetes"]=round(row[8],2)
-        dictionary["Smoking"]=round(row[7],2)
-        dictionary["Cancer"]=round(row[6],2)
-        dictionary["HighBloodPressure"]=round(row[5],2)
-        dictionary["Arthritis"]=round(row[4],2)
-        dictionary["Population2010"]=row[3]
-        dictionary["MedianIncome"]=round(row[2],2)
-        dictionary["State"]=row[1]
-        dictionary["StateCode"]=row[0]
+        dictionary["sleep_less_than7hours"]=round(row[13],2)
+        dictionary["OBESITY"]=round(row[12],2)
+        dictionary["KIDNEY_DISEASE"]=round(row[11],2)
+        dictionary["HIGH_CHOL"]=round(row[10],2)
+        dictionary["DIABETES"]=round(row[9],2)
+        dictionary["SMOKING"]=round(row[8],2)
+        dictionary["ASTHMA"]=round(row[7],2)
+        dictionary["CANCER"]=round(row[6],2)
+        dictionary["BPHIGH"]=round(row[5],2)
+        dictionary["ARTHRITIS"]=round(row[4],2)
+        dictionary["population"]=row[3]
+        dictionary["median_income"]=round(row[2],2)
+        dictionary["state"]=row[1]
+        dictionary["state_abbv"]=row[0]
 
         data.append(dictionary)
      
     return jsonify(data)
     
+
 
 if __name__ == '__main__':
     app.run(debug=True)

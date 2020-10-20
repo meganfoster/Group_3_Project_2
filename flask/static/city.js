@@ -14,6 +14,4 @@ d3.json("/city_data").then(function(state){
       });
     }
 Table(state)   
-})
-
-
+});

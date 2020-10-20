@@ -1,3 +1,6 @@
+d3.json("/city_data").then(function(state){
+  console.log(state)})
+  
 //creat map object
 var myMap = L.map("map", {
     center: [44.4925, -99.9018],

@@ -74,14 +74,14 @@
   </footer>
 
   <!-- API key -->
-  <script type="text/javascript" src="../static/config.js"></script>
+  
+  <script type= "text/javascript" src="{{url_for('static', filename='config.js')}}"></script>
 
   <!-- Our JavaScript -->
-  <script type="text/javascript" src="../static/markerMap.js"></script>
-
+  <script type= "text/javascript" src="{{url_for('static', filename='markerMap.js')}}"></script>
+  
   <!-- Leaflet heatmap plugin-->
-  <script type="text/javascript" src="../static/leaflet-heat.js"></script>
-
+  <script type= "text/javascript" src="{{url_for('static', filename='leaflet-heat.js')}}"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
 </body>
